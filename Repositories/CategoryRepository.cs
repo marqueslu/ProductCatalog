@@ -18,12 +18,12 @@ namespace ProductCatalog.Repositories
 
         public IEnumerable<Category> Get()
         {
-            return _context.Categories.AsNoTracking().ToList();
+            return _context.Categories.Include(x => x.Products).AsNoTracking().ToList();
         }
 
         public Category getById(int id)
         {
-            return _context.Categories.AsNoTracking().Where(x => x.Id == id).FirstOrDefault();
+            return _context.Categories.Include(x => x.Products).AsNoTracking().Where(x => x.Id == id).FirstOrDefault();
         }
 
         public IEnumerable<Product> GetProducts(int id)

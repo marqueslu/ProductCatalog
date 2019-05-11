@@ -1,8 +1,10 @@
 using System;
-using System.Collections.Generic;
+using Newtonsoft.Json;
 
-namespace ProductCatalog.Models{
-    public class Product{
+namespace ProductCatalog.Models
+{
+    public class Product
+    {
         public int Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
@@ -12,6 +14,7 @@ namespace ProductCatalog.Models{
         public DateTime CreateDate { get; set; }
         public DateTime LastUpdateDate { get; set; }
         public int CategoryId { get; set; }
+        [JsonIgnore]
         public Category Category { get; set; }
     }
 }

@@ -18,7 +18,7 @@ namespace ProductCatalog.Controllers
         [HttpGet]
         public IEnumerable<Category> Get()
         {
-            return _categoryRepository.Get();
+            return _categoryRepository.Get(); ;
         }
 
         [Route("v1/categories/{id}")]
